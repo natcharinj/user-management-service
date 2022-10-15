@@ -1,0 +1,36 @@
+version: '3.8'
+
+services:
+  db:
+    container_name: mysql-server-user-services_db
+    image: mysql:5.7
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: MySQL1234!
+      MYSQL_USER: p3tv3t
+      MYSQL_PASSWORD: '!P3tic@w'
+      MYSQL_DATABASE: e-commerce
+      MYSQL_TCP_PORT: 3307
+      MSSQL_DATA_DIR: /var/opt/mssql/data
+      MSSQL_LOG_DIR: /var/opt/mssql/log
+
+    ports:
+      - 3307:3307
+    volumes:
+      - mysql-data:/var/opt/mssql/data
+      - mysql-logs:/var/opt/mssql/log
+      - ./config:/etc/mysql/conf.d
+    command:
+      [
+        --character-set-server=utf8mb4,
+        --collation-server=utf8mb4_unicode_ci,
+      ]
+    networks:
+      - compose_network
+
+volumes:
+  mysql-data:
+  mysql-logs:
+
+networks:
+  compose_network:

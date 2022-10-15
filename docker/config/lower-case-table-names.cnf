@@ -1,0 +1,7 @@
+# Use lower case table name to prevent case sensitive problem
+# More info https://stackoverflow.com/a/6134059/1872200
+
+# Server Command Options https://stackoverflow.com/a/15453913/1872200
+# Alternatively you can use command: [ --lower_case_table_names=1 ] in docker-compose.yml
+[mysqld]
+lower_case_table_names=1

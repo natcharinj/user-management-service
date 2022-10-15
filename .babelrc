@@ -1,0 +1,20 @@
+{
+  "presets": [
+    [
+      "@babel/preset-env",
+      {
+        "targets": {
+          "node": "current" // work with version 12
+        }
+      }
+    ]
+  ],
+  "plugins": [
+    "@babel/plugin-transform-runtime",
+    "@babel/proposal-class-properties",
+    "@babel/proposal-object-rest-spread"
+  ],
+  // To disable source maps set it to false value, work in babel cli as well
+  // https://babeljs.io/docs/en/options#sourcemaps
+  "sourceMaps": "inline" // Only inline work with TypeScript file
+}
